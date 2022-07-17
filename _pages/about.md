@@ -55,6 +55,16 @@ Xiaotao Gu, Hong Yang, Jie Tang, Jing Zhang, **Fanjin Zhang**, Debing Liu, Wendy
 **Research Intern, Machine Learning Group, Microsoft Research Asia, Beijing, China**  
 2017.5 - 2017.9, advised by Dr. [Bin Shao](https://www.binshao.info/)
 
+## Academic Service
+
+**PC Member**: WSDM 2023, ECML-PKDD 2020  
+
+**Reviewer**: IEEE Transactions on Knowledge and Data Engineering (*TKDE*), 
+  IEEE Transactions on Neural Networks and Learning Systems (*TNNLS*),
+  IEEE Transactions on Big Data (*TBD*), 
+  Social Network Analysis and Mining (*SNAM*),
+  AI Open  
+
 ## Awards
 Alumnus Scholarship of Tsinghua University (2021 & 2019)  
 Second Prize of the National Science and Technology Progress Award (2020)  
