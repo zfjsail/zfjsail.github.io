@@ -10,12 +10,18 @@ redirect_from:
 
 <!-- ## About Me -->
 
-I am a fifth-year PhD student in the [Department of Computer Science and Technology](https://www.cs.tsinghua.edu.cn/csen/), [Tsinghua Univerisity](https://www.tsinghua.edu.cn/en/), advised by Prof. [Jie Tang](http://keg.cs.tsinghua.edu.cn/jietang/). Prior to that, I received my bachelor degree in the [Department of Computer Science  and Technology](https://cs.nju.edu.cn/main.htm), [Nanjing Univerisity](https://www.nju.edu.cn/en/main.psp).
+I am a final-year PhD student in the [Department of Computer Science and Technology](https://www.cs.tsinghua.edu.cn/csen/), [Tsinghua Univerisity](https://www.tsinghua.edu.cn/en/), advised by Prof. [Jie Tang](http://keg.cs.tsinghua.edu.cn/jietang/). Prior to that, I received my bachelor degree in the [Department of Computer Science  and Technology](https://cs.nju.edu.cn/main.htm), [Nanjing Univerisity](https://www.nju.edu.cn/en/main.psp).
 
 My research interests generally include data mining, knowledge graph, and social network, with an emphasis on data integration, name disambiguation, and social influence.
 
 
 ## Publications
+**OAG: Linking Entities across Large-Scale Heterogeneous Knowledge Graphs**  
+*IEEE Transactions on Knowledge and Data Engineering (**TKDE**) 2022*    
+**Fanjin Zhang**, Xiao Liu, Jie Tang, Yuxiao Dong, Peiran Yao, Jie Zhang, Xiaotao Gu, Yan Wang, Evgeny Kharlamov, Bin Shao, Rui Li, and Kuansan Wang   
+[[pdf]](https://ieeexplore.ieee.org/abstract/document/9950622) [[data]](https://www.aminer.cn/oag-2-1)  
+
+
 **Understanding WeChat User Preferences and “Wow” Diffusion**  
 *IEEE Transactions on Knowledge and Data Engineering (**TKDE**) 2021*  
 **Fanjin Zhang**, Jie Tang, Xueyi Liu, Zhenyu Hou, Yuxiao Dong, Jing Zhang, Xiao Liu, Ruobing Xie, Kai Zhuang, Xu Zhang, Leyu Lin, and Philip S. Yu.   
@@ -57,7 +63,7 @@ Xiaotao Gu, Hong Yang, Jie Tang, Jing Zhang, **Fanjin Zhang**, Debing Liu, Wendy
 
 ## Academic Service
 
-**PC Member**: WSDM 2023, ECML-PKDD 2020  
+**PC Member**: AAAI 2023, WSDM 2023, ECML-PKDD 2020  
 
 **Reviewer**: IEEE Transactions on Knowledge and Data Engineering (*TKDE*), 
   IEEE Transactions on Neural Networks and Learning Systems (*TNNLS*),
