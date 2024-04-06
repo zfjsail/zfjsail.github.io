@@ -10,12 +10,39 @@ redirect_from:
 
 <!-- ## About Me -->
 
-I am a final-year PhD student in the [Department of Computer Science and Technology](https://www.cs.tsinghua.edu.cn/csen/), [Tsinghua Univerisity](https://www.tsinghua.edu.cn/en/), advised by Prof. [Jie Tang](http://keg.cs.tsinghua.edu.cn/jietang/). Prior to that, I received my bachelor degree in the [Department of Computer Science  and Technology](https://cs.nju.edu.cn/main.htm), [Nanjing Univerisity](https://www.nju.edu.cn/en/main.psp).
+I am a postdoctoral researcher in the [Department of Computer Science and Technology](https://www.cs.tsinghua.edu.cn/csen/), [Tsinghua Univerisity](https://www.tsinghua.edu.cn/en/), collaborated with Prof. [Jie Tang](http://keg.cs.tsinghua.edu.cn/jietang/). Prior to that, I received my Ph.D. degree from [Tsinghua Univerisity](https://www.tsinghua.edu.cn/en/), and my bachelor degree from [Nanjing Univerisity](https://www.nju.edu.cn/en/main.psp).
 
 My research interests generally include data mining, knowledge graph, and social network, with an emphasis on data integration, name disambiguation, and social influence.
 
+**New:**
+[OAG-Challenge](https://www.biendata.xyz/kdd2024/) at KDD Cup 2024 has launched!
+Welcome to join the competition and address the key challenges in academic graph mining. 
+The use of LLMs is encouraged and a free quota of [GLM-4 API](https://open.bigmodel.cn/) is provided.
 
 ## Publications
+
+**OAG-Bench: A Human-Curated Benchmark for Academic Graph Mining**   
+*arXiv:2402.15810*   
+**Fanjin Zhang**, Shijie Shi, Yifan Zhu, Bo Chen, Yukuo Cen, Jifan Yu, Yelin Chen, Lulu Wang, Qingfei Zhao, Yuqing Cheng, Tianyi Han, Yuwei An, Dan Zhang, Weng Lam Tam, Kun Cao, Yunhe Pang, Xinyu Guan, Huihui Yuan, Jian Song, Xiaoyan Li, Yuxiao Dong, and Jie Tang   
+[[pdf]](https://arxiv.org/pdf/2402.15810)  [[data]](https://www.aminer.cn/data/) [[data challenge]](https://www.biendata.xyz/kdd2024/)   
+
+**PST-Bench: Tracing and Benchmarking the Source of Publications**  
+*arXiv:2402.16009*  
+**Fanjin Zhang**, Kun Cao, Yukuo Cen, Jifan Yu, Da Yin, Jie Tang   
+[[pdf]](https://arxiv.org/pdf/2402.16009)  [[code & data]](https://github.com/THUDM/paper-source-trace)  
+
+**BOND: Bootstrapping From-Scratch Name Disambiguation with Multi-task Promoting.** 
+*Proceedings of the Web Conference (**WWW**) 2024*   
+Yuqing Cheng, Bo Chen, **Fanjin Zhang**, and Jie Tang   
+[[pdf]](https://openreview.net/pdf?id=gCx8mY5Xt7) [[code]](https://github.com/THUDM/WhoIsWho)   
+
+
+**Web-Scale Academic Name Disambiguation: the WhoIsWho Benchmark, Leaderboard, and Toolkit**    
+*ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (**KDD**) 2023* 
+Bo Chen, Jing Zhang, **Fanjin Zhang**, Tianyi Han, Yuqing Cheng, XiaoYan Li, Yuxiao Dong, and Jie Tang    
+[[pdf]](http://keg.cs.tsinghua.edu.cn/jietang/publications/KDD23-Chen-WhoIsWho.pdf)  [[code]](https://github.com/THUDM/WhoIsWho)   
+
+
 **OAG: Linking Entities across Large-Scale Heterogeneous Knowledge Graphs**  
 *IEEE Transactions on Knowledge and Data Engineering (**TKDE**) 2022*    
 **Fanjin Zhang**, Xiao Liu, Jie Tang, Yuxiao Dong, Peiran Yao, Jie Zhang, Xiaotao Gu, Yan Wang, Evgeny Kharlamov, Bin Shao, Rui Li, and Kuansan Wang   
@@ -53,17 +80,31 @@ Yutao Zhang, **Fanjin Zhang**, Peiran Yao, and Jie Tang
 Xiaotao Gu, Hong Yang, Jie Tang, Jing Zhang, **Fanjin Zhang**, Debing Liu, Wendy Hall, and Xiao Fu  
 [[pdf]](http://keg.cs.tsinghua.edu.cn/jietang/publications/SNAM18-user-profiling-with-big-data.pdf)
 
+
+
+## Education  
+
+
+2017.09 - 2023.06, Ph.D. in Computer Science and Technology, Tsinghua University  
+
+2013.09 - 2017.06, B.E. in Computer Science and Technology, Nanjing University  
+
+
 ## Experience
 
-**Research Intern, WeChat User Profile Group, Tencent, Beijing, China**  
-2019.7 - 2020.11, advised by Xu Zhang, Kai Zhuang, and [Ruobing Xie](http://nlp.csai.tsinghua.edu.cn/~xrb/)
+2023.07 - 2023.12,  Algorithm Engineer, Zhipu AI, Beijing, China   
 
-**Research Intern, Machine Learning Group, Microsoft Research Asia, Beijing, China**  
-2017.5 - 2017.9, advised by Dr. [Bin Shao](https://www.binshao.info/)
+2019.07 - 2020.11, Research Intern, Tencent, Beijing, China     
+
+2017.05 - 2017.09, Research Intern, Microsoft Research Asia, Beijing, China   
+
 
 ## Academic Service
 
-**PC Member**: AAAI 2023, WSDM 2023, ECML-PKDD 2020  
+**PC Member**:    
+2024: WSDM, AAAI, WWW, KDD  
+2023: WSDM, AAAI   
+2020: ECML-PKDD  
 
 **Reviewer**: IEEE Transactions on Knowledge and Data Engineering (*TKDE*), 
   IEEE Transactions on Neural Networks and Learning Systems (*TNNLS*),
@@ -72,6 +113,7 @@ Xiaotao Gu, Hong Yang, Jie Tang, Jing Zhang, **Fanjin Zhang**, Debing Liu, Wendy
   AI Open  
 
 ## Awards
+Excellent Graduate Student from Department of Computer Science and Technology, Tsinghua University (2023)   
 Alumnus Scholarship of Tsinghua University (2021 & 2019)  
 Second Prize of the National Science and Technology Progress Award (2020)  
 CAAI Annual Outstanding Scientific and Technological Achievement Award (2020)  
