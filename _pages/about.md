@@ -10,21 +10,23 @@ redirect_from:
 
 <!-- ## About Me -->
 
-I am a postdoctoral researcher in the [Department of Computer Science and Technology](https://www.cs.tsinghua.edu.cn/csen/), [Tsinghua Univerisity](https://www.tsinghua.edu.cn/en/), collaborated with Prof. [Jie Tang](http://keg.cs.tsinghua.edu.cn/jietang/). Prior to that, I received my Ph.D. degree from [Tsinghua Univerisity](https://www.tsinghua.edu.cn/en/), and my bachelor degree from [Nanjing Univerisity](https://www.nju.edu.cn/en/main.psp).
+I am a postdoctoral researcher in the [Department of Computer Science and Technology](https://www.cs.tsinghua.edu.cn/csen/), [Tsinghua Univerisity](https://www.tsinghua.edu.cn/en/), collaborated with Prof. [Jie Tang](http://keg.cs.tsinghua.edu.cn/jietang/). Prior to that, I received my Ph.D. degree from [Tsinghua Univerisity](https://www.tsinghua.edu.cn/en/), and my bachelor degree from [Nanjing Univerisity](https://www.nju.edu.cn/).
 
 My research interests generally include data mining, knowledge graph, and social network, with an emphasis on data integration, name disambiguation, and social influence.
 
-**New:**
-[OAG-Challenge](https://www.biendata.xyz/kdd2024/) at KDD Cup 2024 has launched!
+<span style="font-size: 75%; color:red">What's New</span>
+========
+* [AMiner Copilot](https://open.aminer.cn/open/na), an academic chat agent system, has launched. Feel free to try it out and ask academic questions!
+* [OAG-Challenge](https://www.biendata.xyz/kdd2024/) at KDD Cup 2024 has set up long-term leaderboard.
 Welcome to join the competition and address the key challenges in academic graph mining. 
-The use of LLMs is encouraged and a free quota of [GLM-4 API](https://open.bigmodel.cn/) is provided.
+* We maintain a computer science paper sharing channel at [Telegram](https://t.me/CSPaperSharing). Feel free to subscribe!
 
 ## Publications
 
 **OAG-Bench: A Human-Curated Benchmark for Academic Graph Mining**   
-*arXiv:2402.15810*   
+*ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (**KDD**) 2024* 
 **Fanjin Zhang**, Shijie Shi, Yifan Zhu, Bo Chen, Yukuo Cen, Jifan Yu, Yelin Chen, Lulu Wang, Qingfei Zhao, Yuqing Cheng, Tianyi Han, Yuwei An, Dan Zhang, Weng Lam Tam, Kun Cao, Yunhe Pang, Xinyu Guan, Huihui Yuan, Jian Song, Xiaoyan Li, Yuxiao Dong, and Jie Tang   
-[[pdf]](https://arxiv.org/pdf/2402.15810)  [[data]](https://www.aminer.cn/data/) [[data challenge]](https://www.biendata.xyz/kdd2024/)   
+[[pdf]](https://arxiv.org/pdf/2402.15810)  [[code]](https://github.com/zfjsail/OAG-Bench/tree/main)  [[data]](https://www.aminer.cn/data/) [[data challenge]](https://www.biendata.xyz/kdd2024/)   
 
 **PST-Bench: Tracing and Benchmarking the Source of Publications**  
 *arXiv:2402.16009*  
@@ -101,7 +103,8 @@ Xiaotao Gu, Hong Yang, Jie Tang, Jing Zhang, **Fanjin Zhang**, Debing Liu, Wendy
 
 ## Academic Service
 
-**PC Member**:    
+**PC Member**:   
+2025: KDD   
 2024: WSDM, AAAI, WWW, KDD  
 2023: WSDM, AAAI   
 2020: ECML-PKDD  
