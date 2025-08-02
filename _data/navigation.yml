@@ -1,8 +1,20 @@
 # main links links
 main:
+  - title: "Projects"
+    url: \#projects
+
   - title: "Publications"
     url: \#publications
   #   url: {% link about.html | append: "##Publications" %}
+
+  - title: "Experience"
+    url: \#experience
+
+  - title: "Service"
+    url: \#service
+
+  - title: "Awards"
+    url: \#awards
 
   # - title: "Talks"
   #   url: /talks/    
@@ -16,8 +28,8 @@ main:
   # - title: "Blog Posts"
   #   url: /year-archive/
     
-  - title: "CV"
-    url: /files/cv.pdf
+  # - title: "CV"
+    # url: /files/cv.pdf
     
   # - title: "Guide"
   #   url: /markdown/
