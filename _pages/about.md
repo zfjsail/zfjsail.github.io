@@ -23,7 +23,7 @@ I am looking for <u>self-motivated</u> students to work with me on the area of s
 * [AMiner Rumination](https://aminer.org/open/research), an academic deep research system, has launched. Feel free to try it out and ask academic questions!
 * [OAG-Challenge](https://www.biendata.xyz/kdd2024/) at KDD Cup 2024 has set up long-term leaderboard.
 Welcome to join the competition and address the key challenges in academic graph mining. 
-* We maintain a paper sharing channel about large foundation models at <span style="color:red">!!![Xiaohongshu](xxx)</span> and [Telegram](https://t.me/CSPaperSharing). Feel free to subscribe!
+* We maintain a paper sharing channel about large foundation models at [Xiaohongshu](https://www.xiaohongshu.com/user/profile/6028d98600000000010042d3). Feel free to subscribe!
 
 
 ## Projects 
@@ -36,7 +36,10 @@ Welcome to join the competition and address the key challenges in academic graph
 </div>
 <div class='paper-box-text' markdown="1">
 
-Large Language Model Agents make academic applications easier to build and more intelligent. We are now focusing on cutting-edge technologies and products on [AI Academic Search](https://aminer.org/), [AI Paper Reading](https://aminer.org/), and [AMiner Deep Research](https://aminer.org/open/research), toward building powerful agents that plan, search, summarize, and reflect effciently and effectively.  
+**LLM Agent for Academic Data**
+
+
+Large Language Model (LLM) Agents are revolutionizing the development of academic applications, making them smarter and more accessible. Our current focus is on pioneering technologies and products in areas such as [**AI-driven Academic Search**](https://aminer.org), [**Intelligent Paper Reading**](https://www.aminer.cn/chat/s/explain), and [**AMiner Deep Research**](https://aminer.org/open/research). Our goal is to create powerful agents that excel in tasks like planning, searching, summarizing, and reflecting with high levels of efficiency and effectiveness.
 
 
 
@@ -44,70 +47,63 @@ Large Language Model Agents make academic applications easier to build and more 
 </div>
 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Author Name Disambiguation (AND)</div><img src='images/whoiswho.png' alt="sym" width="50%">
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Author Name Disambiguation (AND)</div><img src='images/whoiswho.png' alt="sym" width="100%">
 
 
 </div>
 </div>
 <div class='paper-box-text' markdown="1">
 
-Name disambiguation, a fundamental problem in online academic systems, is now facing greater challenges with the increasing growth of research papers. We construct a million-scale human-annotated author name disambiguation benchmark WhoIsWho, divide the AND problem into several subtasks, and develop corresponding algorithms for each subtask.
+**Name Disambiguation**, a core challenge in academic systems, is now facing greater challenges with the rapid growth of papers. We develop WhoIsWho, a million-scale human-annotated author name disambiguation benchmark, decompose the AND problem into several subtasks, and develop specialized algorithms for each subtask.
 
-- WhoIsWho Benchmark:  [[code & data]](https://github.com/THUDM/WhoIsWho)      
+- ![](https://img.shields.io/badge/KDD-2023-blue) WhoIsWho Benchmark:  [[code & data]](https://github.com/THUDM/WhoIsWho)      
 - From-Scratch Name Disambiguation:
-  - [WWW'24] BOND: an end-to-end method that bootstraps the global clustering and local metric learning. [[code]](https://github.com/THUDM/WhoIsWho)   
-  - [KDD'18] A representation learning method that incorporates both global and local information between documents.  [[code]](https://github.com/neozhangthe1/disambiguation)    
-- INcorrect Assignment Detection: [KDD'25] GuARD: a multi-modal-like multi-turn instruction tuning framework for anomaly detection. [[code & data & model]](https://github.com/THUDM/WhoIsWho/tree/main/mind)        
+  - ![](https://img.shields.io/badge/WWW-2024-blue) BOND: an end-to-end method that bootstraps the global clustering and local metric learning. [[code]](https://github.com/THUDM/WhoIsWho)   
+  - ![](https://img.shields.io/badge/KDD-2018-blue) A representation learning method that incorporates both global and local information between documents.  [[code]](https://github.com/neozhangthe1/disambiguation)    
+- INcorrect Assignment Detection: ![](https://img.shields.io/badge/KDD-2025-blue) GuARD: a multi-modal-like multi-turn instruction tuning framework. [[code & data & model]](https://github.com/THUDM/WhoIsWho/tree/main/mind)        
 
 
 </div>
 </div>
 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Paper Source Tracing (PST)</div><img src='images/pst.png' alt="sym" width="50%">
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Paper Source Tracing (PST)</div><img src='images/pst.png' alt="sym" width="100%">
 
 
 </div>
 </div>
 <div class='paper-box-text' markdown="1">
+
+**Paper Source Tracing (PST)**  
 
 Comprehending the patterns of scientific evolution, such as the trends of topics and the flow of ideas,
-are critical for researchers in knowledge discovery. However, a notable gap persists between the large-scale and semantically rich citation relations and the backbone structure of scientific evolution. We construct a high-quality and ever-increasing dataset PST-Bench in computer science and present a live demo to automatically trace the source of any target paper based on its full text. [[code & data]](https://github.com/THUDM/paper-source-trace)  [[demo]](http://pst.aminer.cn)   
+are critical for researchers in knowledge discovery. However, a notable gap persists between the large-scale and semantically rich citation relations and the backbone structure of scientific evolution. To bridge this gap, we construct a high-quality and ever-increasing dataset PST-Bench in computer science. Addtionally, we present a live demo to automatically trace the source of any target paper based on its full text. [[code & data]](https://github.com/THUDM/paper-source-trace)  [[demo]](http://pst.aminer.cn)   
 
 
 </div>
 </div>
 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Open Academic Graph (OAG)</div><img src='images/oab-overview-en.png' alt="sym" width="50%">
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Open Academic Graph (OAG)</div><img src='images/oab-overview-en.png' alt="sym" width="100%">
 
 
 </div>
 </div>
 <div class='paper-box-text' markdown="1">
 
-The overarching goal of academic data mining is to deepen our comprehension of the development, nature, and trends of science. It offers the potential to unlock enormous scientific, technological, and educational value.
-We release a series of human-curated academic benchmarks to foster the develeopment of academic data mining.  
+**Open Academic Graph (OAG)**
+
+The overarching goal of academic data mining is to deepen our comprehension of the development, nature, and trends of science, unlocking immense value across scientific, technological, and educational domains.
+We release a series of meticulously curated academic benchmarks to foster the develeopment of this field.  
 
 
-- OAG: a series of billion-scale academic knowledge graphs. [[data]](https://www.aminer.cn/open-academic-graph)   
-- OAG-Bench: a comprehensive, multi-aspect, and fine-grained human-curated benchmark based
+- ![](https://img.shields.io/badge/KDD-2019-blue)  ![](https://img.shields.io/badge/TKDE-2023-blue) OAG: A collection of billion-scale academic knowledge graphs. [[data]](https://www.aminer.cn/open/article?id=5965cf249ed5db41ed4f52bf)   
+- ![](https://img.shields.io/badge/KDD-2024-blue) OAG-Bench: a comprehensive, multi-aspect, and fine-grained human-curated benchmark built
 on OAG, covering 10 tasks, 20 datasets, 70+baselines, and 120+experimental results to date. [[code]](https://github.com/zfjsail/OAG-Bench/tree/main)  [[data]](https://www.aminer.cn/data/) [[data challenge]](https://www.biendata.xyz/kdd2024/)     
 </div>
 </div>
 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">GitHub Repo</div><img src='images/pst.png' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[Awesome Simultaneous Translation](https://github.com/zhangshaolei1998/Awesome-Simultaneous-Translation) \\
-**Shaolei Zhang**
-
-[![](https://img.shields.io/github/stars/zhangshaolei1998/Awesome-Simultaneous-Translation?style=social&label=Code+Stars)](https://github.com/zhangshaolei1998/Awesome-Simultaneous-Translation)
-
-- A repository that collects the tookits, common datasets and paper list related to the research on Simultaneous Translation, including text-to-text machine translation and speech-to-text translation.
-</div>
-</div>
 
 
 
@@ -175,7 +171,7 @@ Xiao Liu, Li Mian, Yuxiao Dong, **Fanjin Zhang**, Jing Zhang, Jie Tang, Peng Zha
 **OAG: Toward Linking Large-scale Heterogeneous Entity Graphs**    
 *The 25th ACM SIGKDD Conference on Knowledge Discovery and Data Mining (**KDD** <span style="color:red">**Oral**</span>) 2019*    
 **Fanjin Zhang**, Xiao Liu, Jie Tang, Yuxiao Dong, Peiran Yao, Jie Zhang, Xiaotao Gu, Yan Wang, Bin Shao, Rui Li, and Kuansan Wang    
-[[pdf]](http://keg.cs.tsinghua.edu.cn/jietang/publications/KDD19-Zhang-et-al-Open_Academic_Graph.pdf) [[code]](https://github.com/zfjsail/OAG) [[data & website]](https://www.aminer.cn/open-academic-graph)     
+[[pdf]](http://keg.cs.tsinghua.edu.cn/jietang/publications/KDD19-Zhang-et-al-Open_Academic_Graph.pdf) [[code]](https://github.com/zfjsail/OAG) [[data & website]](https://www.aminer.cn/open/article?id=5965cf249ed5db41ed4f52bf)     
 
 **Name Disambiguation in AMiner: Clustering, Maintenance, and Human in the Loop**     
 *The 24th ACM SIGKDD Conference on Knowledge Discovery and Data Mining (**KDD** <span style="color:red">**Oral**</span>) 2018*     
@@ -206,7 +202,7 @@ Xiaotao Gu, Hong Yang, Jie Tang, Jing Zhang, **Fanjin Zhang**, Debing Liu, Wendy
 
 
 
-## Academic Service
+## Service
 
 **PC Member**:   
 2025: KDD   
