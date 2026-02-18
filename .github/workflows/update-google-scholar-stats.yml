@@ -1,6 +1,9 @@
 name: Update Google Scholar Stats
 
 on:
+  page_build:
+  schedule:
+    - cron: "0 8 * * *"
   workflow_dispatch:
 
 jobs:
