@@ -39,11 +39,11 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git pull --rebase origin google-scholar-stats
           git add gs_data.json gs_data_shieldsio.json _site/gs_data_shieldsio.json
           if git diff --cached --quiet; then
             echo "No changes to commit."
             exit 0
           fi
           git commit -m "Update Google Scholar citation stats"
+          git pull --rebase origin google-scholar-stats
           git push origin google-scholar-stats
