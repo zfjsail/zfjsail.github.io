@@ -407,7 +407,7 @@ National Scholarship (2014)</p>
 
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    function initGoogleScholarStats() {
         var gsRepository = 'zfjsail/zfjsail.github.io';
         var gsDataPaths = [
             'https://cdn.jsdelivr.net/gh/' + gsRepository + '@google-scholar-stats/gs_data.json',
@@ -461,6 +461,34 @@ National Scholarship (2014)</p>
             return onlyDigits;
         }
 
+        function getRawCitation(data) {
+            if (!data) {
+                return null;
+            }
+            var raw = data['citedby'];
+            if ((raw === null || raw === undefined || String(raw).trim() === '') && data['message'] !== undefined) {
+                raw = data['message'];
+            }
+            return raw;
+        }
+
+        function hasUsableCitation(data) {
+            var raw = getRawCitation(data);
+            if (raw === null || raw === undefined) {
+                return false;
+            }
+            var normalized = String(normalizeCitationValue(raw)).trim();
+            if (!normalized || normalized.toUpperCase() === 'N/A') {
+                return false;
+            }
+            return !isNaN(parseInt(normalized, 10));
+        }
+
+        function isApproxCitation(data) {
+            var raw = getRawCitation(data);
+            return typeof raw === 'string' && raw.indexOf('+') >= 0;
+        }
+
         function extractProfileCitations() {
             var scholarProfile = 'https://scholar.google.com/citations?user=V-e7-ooAAAAJ&hl=en';
             if (!scholarProfile) {
@@ -489,10 +517,7 @@ National Scholarship (2014)</p>
         function setCitationData(data, isCached) {
             window.googleScholarData = data;
 
-            var rawCitations = data['citedby'];
-            if (!rawCitations && data['message']) {
-                rawCitations = data['message'];
-            }
+            var rawCitations = getRawCitation(data);
             var approx = false;
             if (typeof rawCitations === 'string' && rawCitations.indexOf('+') >= 0) {
                 approx = true;
@@ -518,7 +543,12 @@ National Scholarship (2014)</p>
                     badgeElement.src = badgeBase + badgeParams;
                     badgeElement.alt = 'Google Scholar citations: ' + totalCitation + (approx ? ' (approximate)' : '') + (isCached ? ' (cache)' : '');
                 } else {
-                    badgeElement.alt = 'Google Scholar citations: not available';
+                    var fallbackCitation = totalCitation;
+                    if (fallbackCitation === null || fallbackCitation === undefined || String(fallbackCitation).trim() === '') {
+                        fallbackCitation = 'N/A';
+                    }
+                    badgeElement.src = 'https://img.shields.io/badge/citations-' + encodeURIComponent(String(fallbackCitation)) + '-lightgrey?style=flat&logo=Google%20Scholar&labelColor=f6f6f6&label=citations';
+                    badgeElement.alt = 'Google Scholar citations: ' + fallbackCitation + (isCached ? ' (cache)' : '');
                 }
             }
 
@@ -558,6 +588,9 @@ National Scholarship (2014)</p>
                 if (!cache || !cache.data || !cache.timestamp || (Date.now() - cache.timestamp) > cacheTtlMs) {
                     return false;
                 }
+                if (!hasUsableCitation(cache.data) || isApproxCitation(cache.data)) {
+                    return false;
+                }
                 setCitationData(cache.data, true);
                 return true;
             } catch (error) {
@@ -576,7 +609,7 @@ National Scholarship (2014)</p>
             }
         }
 
-        function fetchFromUrl(url) {
+        function fetchFromUrl(url, allowApprox) {
             var timeoutMs = 6000;
             var controller = new AbortController();
             var timeoutId = setTimeout(function () {
@@ -588,19 +621,27 @@ National Scholarship (2014)</p>
                 if (!response.ok) {
                     throw new Error('HTTP ' + response.status);
                 }
-                return parseJsonResponse(response);
+                return parseJsonResponse(response).then(function (data) {
+                    if (!hasUsableCitation(data)) {
+                        throw new Error('Citation unavailable in source');
+                    }
+                    if (!allowApprox && isApproxCitation(data)) {
+                        throw new Error('Approximate citation skipped');
+                    }
+                    return data;
+                });
             }).catch(function (error) {
                 clearTimeout(timeoutId);
                 throw error;
             });
         }
 
-        function fetchScholarStats(index) {
+        function fetchScholarStats(index, allowApprox) {
             if (index >= gsDataPaths.length) {
                 return Promise.reject(new Error('All data sources failed'));
             }
-            return fetchFromUrl(gsDataPaths[index]).catch(function () {
-                return fetchScholarStats(index + 1);
+            return fetchFromUrl(gsDataPaths[index], allowApprox).catch(function () {
+                return fetchScholarStats(index + 1, allowApprox);
             });
         }
 
@@ -613,10 +654,12 @@ National Scholarship (2014)</p>
             }
         }
 
-        fetchScholarStats(0).then(function (data) {
+        fetchScholarStats(0, false).catch(function () {
+            return fetchScholarStats(0, true);
+        }).then(function (data) {
             setCitationData(data, false);
             saveCache(data);
-            if (data['message'] && String(data['message']).indexOf('+') >= 0) {
+            if (isApproxCitation(data)) {
                 extractProfileCitations().then(function (actualCount) {
                     data['citedby'] = actualCount;
                     setCitationData(data, false);
@@ -630,7 +673,13 @@ National Scholarship (2014)</p>
                 renderFallback();
             }
         });
-    });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initGoogleScholarStats);
+    } else {
+        initGoogleScholarStats();
+    }
 </script>
 
 
