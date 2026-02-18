@@ -1,0 +1,45 @@
+name: Update Google Scholar Stats
+
+on:
+  workflow_dispatch:
+
+jobs:
+  update-scholar-stats:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install crawler dependencies
+        run: python -m pip install -r google_scholar_crawler/requirements.txt
+
+      - name: Crawl Google Scholar
+        env:
+          GOOGLE_SCHOLAR_ID: ${{ secrets.GOOGLE_SCHOLAR_ID }}
+        run: python google_scholar_crawler/main.py
+
+      - name: Update stats files
+        run: |
+          cp results/gs_data.json gs_data.json
+          cp results/gs_data_shieldsio.json gs_data_shieldsio.json
+          mkdir -p _site
+          cp results/gs_data_shieldsio.json _site/gs_data_shieldsio.json
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add gs_data.json gs_data_shieldsio.json _site/gs_data_shieldsio.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "Update Google Scholar citation stats"
+          git push origin HEAD:google-scholar-stats
