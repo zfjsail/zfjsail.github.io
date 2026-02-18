@@ -4,6 +4,12 @@ from datetime import datetime
 import os
 import re
 import urllib.request
+import inspect
+
+try:
+    from fp.fp import FreeProxy
+except Exception:
+    FreeProxy = None
 
 
 def _to_int(value):
@@ -36,6 +42,16 @@ author = {}
 scholarly_error = None
 
 try:
+    if FreeProxy is not None:
+        sig = inspect.signature(FreeProxy.get_proxy_list)
+        if "repeat" in sig.parameters:
+            _orig_get_proxy_list = FreeProxy.get_proxy_list
+
+            def _compat_get_proxy_list(self, repeat=False):
+                return _orig_get_proxy_list(self, repeat)
+
+            FreeProxy.get_proxy_list = _compat_get_proxy_list
+
     pg = ProxyGenerator()
     pg.FreeProxies()
     scholarly.use_proxy(pg)
