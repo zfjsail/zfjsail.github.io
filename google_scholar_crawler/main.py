@@ -1,4 +1,4 @@
-from scholarly import scholarly
+from scholarly import scholarly, ProxyGenerator
 import json
 from datetime import datetime
 import os
@@ -36,6 +36,10 @@ author = {}
 scholarly_error = None
 
 try:
+    pg = ProxyGenerator()
+    pg.FreeProxies()
+    scholarly.use_proxy(pg)
+
     author = scholarly.search_author_id(scholar_id)
     scholarly.fill(author, sections=["basics", "indices", "counts", "publications"])
 except Exception as e:
