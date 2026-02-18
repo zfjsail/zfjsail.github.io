@@ -10,24 +10,18 @@ redirect_from:
 
 <!-- ## About Me -->
 
-I am a postdoctoral researcher in the [Department of Computer Science and Technology](https://www.cs.tsinghua.edu.cn/csen/), [Tsinghua Univerisity](https://www.tsinghua.edu.cn/en/), collaborated with Prof. [Jie Tang](http://keg.cs.tsinghua.edu.cn/jietang/). Prior to that, I received my Ph.D. degree from [Tsinghua Univerisity](https://www.tsinghua.edu.cn/en/), and my bachelor degree from [Nanjing Univerisity](https://www.nju.edu.cn/).
+Fanjin Zhang (张帆进) an Assistant Professor in the [School of Information](http://info.ruc.edu.cn/), [Renmin University of China](https://www.ruc.edu.cn/). She received her Ph.D. degree from [Tsinghua University](https://www.tsinghua.edu.cn/en/), advised by Prof. [Jie Tang](https://keg.cs.tsinghua.edu.cn/jietang/), and her bachelor degree from [Nanjing University](https://www.nju.edu.cn/).
 
 My research interests generally include data mining, knowledge graph, and large language models, with an emphasis on developing **scalable** and **lightweight** data mining algorithms
 primarily on academic knowledge graph to accelerate academic research and scientific innovation.
-Recently, I am also working on LLM inference acceleration.  
+For a complete and up-to-date publication list, see my Google Scholar profile <a href='https://scholar.google.com/citations?user=V-e7-ooAAAAJ'><img id="google-scholar-citation-badge" src="https://img.shields.io/badge/citations-loading-lightgrey?style=flat&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&label=citations" alt="Google Scholar citations loading"></a>.
 
-I am looking for <u>self-motivated</u> students to work with me on the area of speculative decoding and LLM agent. If interested, please drop me a message by email.  
-
-<span style="font-size: 75%; color:red">What's New</span>
-========
-* [AMiner Rumination](https://aminer.org/open/research), an academic deep research system, has launched. Feel free to try it out and ask academic questions!
-* [OAG-Challenge](https://www.biendata.xyz/kdd2024/) at KDD Cup 2024 has set up long-term leaderboard.
-Welcome to join the competition and address the key challenges in academic graph mining. 
-* We maintain a paper sharing channel about large foundation models at [Xiaohongshu](https://www.xiaohongshu.com/user/profile/6028d98600000000010042d3). Feel free to subscribe!
+I am looking for <u>self-motivated</u> students to work with me on the area of AI for research. If interested, please drop me a message by email.  
 
 
-## Projects 
+## Research 
 
+---
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">LLM Agent for Academic Data</div><img src='images/aminer-dr.png' alt="sym" width="100%">
 

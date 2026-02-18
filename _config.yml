@@ -7,6 +7,7 @@
 
 # Site Settings
 title                    : "Fanjin Zhang"
+repository               : "zfjsail/zfjsail.github.io"
 google_scholar_stats_use_cdn : true
 
 # google analytics

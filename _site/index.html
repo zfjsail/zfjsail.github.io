@@ -190,23 +190,17 @@
           <section class="page__content" itemprop="text">
             <!-- ## About Me -->
 
-<p>I am a postdoctoral researcher in the <a href="https://www.cs.tsinghua.edu.cn/csen/">Department of Computer Science and Technology</a>, <a href="https://www.tsinghua.edu.cn/en/">Tsinghua Univerisity</a>, collaborated with Prof. <a href="http://keg.cs.tsinghua.edu.cn/jietang/">Jie Tang</a>. Prior to that, I received my Ph.D. degree from <a href="https://www.tsinghua.edu.cn/en/">Tsinghua Univerisity</a>, and my bachelor degree from <a href="https://www.nju.edu.cn/">Nanjing Univerisity</a>.</p>
+<p>Fanjin Zhang (张帆进) an Assistant Professor in the <a href="http://info.ruc.edu.cn/">School of Information</a>, <a href="https://www.ruc.edu.cn/">Renmin University of China</a>. She received her Ph.D. degree from <a href="https://www.tsinghua.edu.cn/en/">Tsinghua University</a>, advised by Prof. <a href="https://keg.cs.tsinghua.edu.cn/jietang/">Jie Tang</a>, and her bachelor degree from <a href="https://www.nju.edu.cn/">Nanjing University</a>.</p>
 
 <p>My research interests generally include data mining, knowledge graph, and large language models, with an emphasis on developing <strong>scalable</strong> and <strong>lightweight</strong> data mining algorithms
 primarily on academic knowledge graph to accelerate academic research and scientific innovation.
-Recently, I am also working on LLM inference acceleration.</p>
+For a complete and up-to-date publication list, see my Google Scholar profile <a href="https://scholar.google.com/citations?user=V-e7-ooAAAAJ"><img id="google-scholar-citation-badge" src="https://img.shields.io/badge/citations-loading-lightgrey?style=flat&amp;logo=Google%20Scholar&amp;labelColor=f6f6f6&amp;color=9cf&amp;label=citations" alt="Google Scholar citations loading" /></a>.</p>
 
-<p>I am looking for <u>self-motivated</u> students to work with me on the area of speculative decoding and LLM agent. If interested, please drop me a message by email.</p>
+<p>I am looking for <u>self-motivated</u> students to work with me on the area of AI for research. If interested, please drop me a message by email.</p>
 
-<h1 id="whats-new"><span style="font-size: 75%; color:red">What’s New</span></h1>
-<ul>
-  <li><a href="https://aminer.org/open/research">AMiner Rumination</a>, an academic deep research system, has launched. Feel free to try it out and ask academic questions!</li>
-  <li><a href="https://www.biendata.xyz/kdd2024/">OAG-Challenge</a> at KDD Cup 2024 has set up long-term leaderboard.
-Welcome to join the competition and address the key challenges in academic graph mining.</li>
-  <li>We maintain a paper sharing channel about large foundation models at <a href="https://www.xiaohongshu.com/user/profile/6028d98600000000010042d3">Xiaohongshu</a>. Feel free to subscribe!</li>
-</ul>
+<h2 id="research">Research</h2>
 
-<h2 id="projects">Projects</h2>
+<hr />
 
 <div class="paper-box"><div class="paper-box-image"><div><div class="badge">LLM Agent for Academic Data</div><img src="images/aminer-dr.png" alt="sym" width="100%" />
 
@@ -413,22 +407,232 @@ National Scholarship (2014)</p>
 
 
 <script>
-    $(document).ready(function () {
-        
-        var gsDataBaseUrl = 'https://cdn.jsdelivr.net/gh/@'
-        
-        $.getJSON(gsDataBaseUrl + "google-scholar-stats/gs_data.json", function (data) {
-            var totalCitation = data['citedby']
-            document.getElementById('total_cit').innerHTML = totalCitation;
-            var citationEles = document.getElementsByClassName('show_paper_citations')
-            Array.prototype.forEach.call(citationEles, element => {
-                var paperId = element.getAttribute('data')
-                var numCitations = data['publications'][paperId]['num_citations']
-                element.innerHTML = '| Citations: ' + numCitations;
+    document.addEventListener('DOMContentLoaded', function () {
+        var gsRepository = 'zfjsail/zfjsail.github.io';
+        var gsDataPaths = [
+            'https://cdn.jsdelivr.net/gh/' + gsRepository + '@google-scholar-stats/gs_data.json',
+            'https://cdn.jsdelivr.net/gh/' + gsRepository + '@google-scholar-stats/gs_data_shieldsio.json',
+            'https://cdn.jsdelivr.net/gh/' + gsRepository + '@google-scholar-stats/results/gs_data.json',
+            'https://cdn.jsdelivr.net/gh/' + gsRepository + '@google-scholar-stats/results/gs_data_shieldsio.json',
+            'https://raw.githubusercontent.com/' + gsRepository + '/google-scholar-stats/gs_data.json',
+            'https://raw.githubusercontent.com/' + gsRepository + '/google-scholar-stats/gs_data_shieldsio.json',
+            'https://raw.githubusercontent.com/' + gsRepository + '/google-scholar-stats/results/gs_data.json',
+            'https://raw.githubusercontent.com/' + gsRepository + '/google-scholar-stats/results/gs_data_shieldsio.json',
+            'https://cdn.jsdelivr.net/gh/' + gsRepository + '@main/google-scholar-stats/gs_data.json',
+            'https://raw.githubusercontent.com/' + gsRepository + '/main/google-scholar-stats/gs_data.json',
+            'https://raw.githubusercontent.com/' + gsRepository + '/main/gs_data.json'
+        ];
+        var cacheKey = 'google-scholar-stats-cache-v1';
+        var cacheTtlMs = 24 * 60 * 60 * 1000;
+
+        function parseJsonResponse(response) {
+            return response.text().then(function (text) {
+                var trimmed = text.trim();
+                if (!trimmed.startsWith('{') && !trimmed.startsWith('[')) {
+                    throw new Error('Non-JSON response');
+                }
+                return JSON.parse(trimmed);
             });
+        }
+
+        function formatNumber(value) {
+            if (typeof value === 'string' && /\d+\+$/.test(value.trim())) {
+                return value.trim();
+            }
+            var num = parseInt(value, 10);
+            return isNaN(num) ? value : num.toString();
+        }
+
+        function normalizeCitationValue(value) {
+            if (value === null || value === undefined) {
+                return value;
+            }
+            if (typeof value === 'number') {
+                return value.toString();
+            }
+            var raw = String(value);
+            if (/\d+\+$/.test(raw.trim())) {
+                return raw.trim();
+            }
+            var onlyDigits = raw.replace(/\D/g, '');
+            if (onlyDigits === '') {
+                return raw;
+            }
+            return onlyDigits;
+        }
+
+        function extractProfileCitations() {
+            var scholarProfile = 'https://scholar.google.com/citations?user=V-e7-ooAAAAJ&hl=en';
+            if (!scholarProfile) {
+                return Promise.reject(new Error('No scholar profile configured'));
+            }
+            var path = scholarProfile.replace('https://scholar.google.com', '');
+            var mirrorUrl = 'https://r.jina.ai/http://scholar.google.com' + path;
+            return fetch(mirrorUrl).then(function (response) {
+                if (!response.ok) {
+                    throw new Error('Profile fetch failed');
+                }
+                return response.text();
+            }).then(function (text) {
+                var match = text.match(/Citations\s+([0-9,]+)/i);
+                if (!match || !match[1]) {
+                    throw new Error('Citation value not found in mirrored page');
+                }
+                var n = parseInt(match[1].replace(/,/g, ''), 10);
+                if (isNaN(n)) {
+                    throw new Error('Cannot parse mirrored citation value');
+                }
+                return n;
+            });
+        }
+
+        function setCitationData(data, isCached) {
+            window.googleScholarData = data;
+
+            var rawCitations = data['citedby'];
+            if (!rawCitations && data['message']) {
+                rawCitations = data['message'];
+            }
+            var approx = false;
+            if (typeof rawCitations === 'string' && rawCitations.indexOf('+') >= 0) {
+                approx = true;
+            }
+
+            var totalCitation = formatNumber(normalizeCitationValue(rawCitations));
+            var totalCitationElement = document.getElementById('total_cit');
+            if (totalCitationElement) {
+                totalCitationElement.innerHTML = totalCitation;
+            }
+
+            var badgeElement = document.getElementById('google-scholar-citation-badge');
+            if (badgeElement) {
+                if (!isNaN(parseInt(totalCitation, 10))) {
+                    var badgeBase = 'https://img.shields.io/badge/citations-' + encodeURIComponent(String(totalCitation)) + '-9cf';
+                    var badgeParams = '?logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations';
+                    if (approx) {
+                        badgeParams += '&label=~citations';
+                    }
+                    if (isCached) {
+                        badgeParams += '&labelColor=dddddd';
+                    }
+                    badgeElement.src = badgeBase + badgeParams;
+                    badgeElement.alt = 'Google Scholar citations: ' + totalCitation + (approx ? ' (approximate)' : '') + (isCached ? ' (cache)' : '');
+                } else {
+                    badgeElement.alt = 'Google Scholar citations: not available';
+                }
+            }
+
+            var citationEles = document.getElementsByClassName('show_paper_citations');
+            Array.prototype.forEach.call(citationEles, function (element) {
+                var paperId = element.getAttribute('data');
+                if (data['publications'] && data['publications'][paperId]) {
+                    var numCitations = data['publications'][paperId]['num_citations'];
+                    element.innerHTML = '| Citations: ' + numCitations;
+                } else {
+                    element.innerHTML = '';
+                }
+            });
+
+            document.dispatchEvent(new CustomEvent('google-scholar-stats-loaded', { detail: data }));
+        }
+
+        function renderFallback() {
+            var badgeElement = document.getElementById('google-scholar-citation-badge');
+            if (badgeElement) {
+                badgeElement.src = 'https://img.shields.io/badge/citations-not%20found-lightgrey?style=flat&logo=Google%20Scholar&labelColor=f6f6f6&label=citations';
+                badgeElement.alt = 'Google Scholar citations: not found';
+            }
+            var totalCitationElement = document.getElementById('total_cit');
+            if (totalCitationElement) {
+                totalCitationElement.innerHTML = 'N/A';
+            }
+        }
+
+        function setFromCache() {
+            try {
+                var raw = localStorage.getItem(cacheKey);
+                if (!raw) {
+                    return false;
+                }
+                var cache = JSON.parse(raw);
+                if (!cache || !cache.data || !cache.timestamp || (Date.now() - cache.timestamp) > cacheTtlMs) {
+                    return false;
+                }
+                setCitationData(cache.data, true);
+                return true;
+            } catch (error) {
+                return false;
+            }
+        }
+
+        function saveCache(data) {
+            try {
+                localStorage.setItem(cacheKey, JSON.stringify({
+                    timestamp: Date.now(),
+                    data: data
+                }));
+            } catch (error) {
+                // Ignore storage errors (private mode / quota).
+            }
+        }
+
+        function fetchFromUrl(url) {
+            var timeoutMs = 6000;
+            var controller = new AbortController();
+            var timeoutId = setTimeout(function () {
+                controller.abort();
+            }, timeoutMs);
+
+            return fetch(url, { signal: controller.signal }).then(function (response) {
+                clearTimeout(timeoutId);
+                if (!response.ok) {
+                    throw new Error('HTTP ' + response.status);
+                }
+                return parseJsonResponse(response);
+            }).catch(function (error) {
+                clearTimeout(timeoutId);
+                throw error;
+            });
+        }
+
+        function fetchScholarStats(index) {
+            if (index >= gsDataPaths.length) {
+                return Promise.reject(new Error('All data sources failed'));
+            }
+            return fetchFromUrl(gsDataPaths[index]).catch(function () {
+                return fetchScholarStats(index + 1);
+            });
+        }
+
+        var hasCache = setFromCache();
+        if (!hasCache) {
+            var badgeElement = document.getElementById('google-scholar-citation-badge');
+            if (badgeElement) {
+                badgeElement.src = 'https://img.shields.io/badge/citations-loading...-lightgrey?style=flat&logo=Google%20Scholar&labelColor=f6f6f6&label=citations';
+                badgeElement.alt = 'Google Scholar citations: loading';
+            }
+        }
+
+        fetchScholarStats(0).then(function (data) {
+            setCitationData(data, false);
+            saveCache(data);
+            if (data['message'] && String(data['message']).indexOf('+') >= 0) {
+                extractProfileCitations().then(function (actualCount) {
+                    data['citedby'] = actualCount;
+                    setCitationData(data, false);
+                    saveCache(data);
+                }).catch(function () {
+                    // Keep approximate value if profile probe fails.
+                });
+            }
+        }).catch(function () {
+            if (!hasCache) {
+                renderFallback();
+            }
         });
-    })
+    });
 </script>
+
 
 
   </body>
