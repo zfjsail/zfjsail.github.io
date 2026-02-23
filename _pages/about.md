@@ -10,23 +10,18 @@ redirect_from:
 
 <!-- ## About Me -->
 
-I am a postdoctoral researcher in the [Department of Computer Science and Technology](https://www.cs.tsinghua.edu.cn/csen/), [Tsinghua Univerisity](https://www.tsinghua.edu.cn/en/), collaborated with Prof. [Jie Tang](http://keg.cs.tsinghua.edu.cn/jietang/). Prior to that, I received my Ph.D. degree from [Tsinghua Univerisity](https://www.tsinghua.edu.cn/en/), and my bachelor degree from [Nanjing Univerisity](https://www.nju.edu.cn/).
+I am Fanjin Zhang (张帆进), an Assistant Professor in the [School of Information](http://info.ruc.edu.cn/), [Renmin University of China](https://www.ruc.edu.cn/). I received my Ph.D. degree from [Tsinghua University](https://www.tsinghua.edu.cn/en/), advised by Prof. [Jie Tang](https://keg.cs.tsinghua.edu.cn/jietang/), and my bachelor degree from [Nanjing University](https://www.nju.edu.cn/).
 
 My research interests generally include data mining, knowledge graph, and large language models, with an emphasis on developing **scalable** and **lightweight** data mining algorithms
 primarily on academic knowledge graph to accelerate academic research and scientific innovation.
-Recently, I am also working on LLM inference acceleration.  
-
-I am looking for <u>self-motivated</u> students to work with me on the area of speculative decoding and LLM agent. If interested, please drop me a message by email.  
-
-<span style="font-size: 75%; color:red">What's New</span>
-========
-* [AMiner Rumination](https://aminer.org/open/research), an academic deep research system, has launched. Feel free to try it out and ask academic questions!
-* [OAG-Challenge](https://www.biendata.xyz/kdd2024/) at KDD Cup 2024 has set up long-term leaderboard.
-Welcome to join the competition and address the key challenges in academic graph mining. 
-* We maintain a paper sharing channel about large foundation models at [Xiaohongshu](https://www.xiaohongshu.com/user/profile/6028d98600000000010042d3). Feel free to subscribe!
+For a complete and up-to-date publication list, see my Google Scholar profile <a href='https://scholar.google.com/citations?user=V-e7-ooAAAAJ'><img id="google-scholar-citation-badge" src="https://img.shields.io/badge/citations-loading-lightgrey?style=flat&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&label=citations" alt="Google Scholar citations loading"></a>.
 
 
-## Projects 
+I am looking for <u>highly-motivated</u> students to work with me on the area of AI for research. If interested, please drop me a message by email.  
+
+
+
+## Research 
 
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">LLM Agent for Academic Data</div><img src='images/aminer-dr.png' alt="sym" width="100%">
@@ -109,14 +104,21 @@ on OAG, covering 10 tasks, 20 datasets, 70+baselines, and 120+experimental resul
 
 ## Publications
 
+(† corresponding authors)
+
+**RPC-Bench: A Fine-grained Benchmark for Research Paper Comprehension**  
+*arXiv:2601.14289*    
+Yelin Chen, **Fanjin Zhang†**, Suping Sun, Yunhe Pang, Yuanchun Wang, Jian Song, Xiaoyan Li, Lei Hou, Shu Zhao, Jie Tang, Juanzi Li  
+[[pdf]](https://arxiv.org/pdf/2601.14289) [[code & data]](https://rpc-bench.github.io/)  
+
 **Small Language Model Makes an Effective Long Text Extractor**     
 *The 39th Annual AAAI Conference on Artificial Intelligence (**AAAI**) 2025*      
-Yelin Chen, **Fanjin Zhang**, Jie Tang      
+Yelin Chen, **Fanjin Zhang†**, Jie Tang      
 [[pdf]](https://arxiv.org/pdf/2502.07286)  [[code & data]](https://github.com/THUDM/scholar-profiling/tree/main/sener)   
 
 **GuARD: Effective Anomaly Detection through a Text-Rich and Graph-Informed Language Model**          
 *The 31st ACM SIGKDD Conference on Knowledge Discovery and Data Mining (**KDD**) 2025*          
-Yunhe Pang, Bo Chen, **Fanjin Zhang**, Yanghui Rao, Evgeny Kharlamov, Jie Tang      
+Yunhe Pang, Bo Chen, **Fanjin Zhang†**, Yanghui Rao, Evgeny Kharlamov, Jie Tang      
 [[pdf]](https://arxiv.org/pdf/2412.03930)  [[code & data & model]](https://github.com/THUDM/WhoIsWho/tree/main/mind)        
 
 **SAM Decoding: Speculative Decoding via Suffix Automaton**    
@@ -136,7 +138,7 @@ Yuxuan Hu, Ke Wang, Xiaokang Zhang, **Fanjin Zhang**, Cuiping Li, Hong Chen, Jin
 
 **BOND: Bootstrapping From-Scratch Name Disambiguation with Multi-task Promoting.**     
 *The Web Conference (**WWW**) 2024*     
-Yuqing Cheng, Bo Chen, **Fanjin Zhang**, and Jie Tang     
+Yuqing Cheng, Bo Chen, **Fanjin Zhang†**, and Jie Tang     
 [[pdf]](https://arxiv.org/pdf/2404.08322) [[code]](https://github.com/THUDM/WhoIsWho)     
 
 
@@ -187,17 +189,19 @@ Xiaotao Gu, Hong Yang, Jie Tang, Jing Zhang, **Fanjin Zhang**, Debing Liu, Wendy
 
 ## Experience  
 
-2024.01 - Now, Postdoctoral Researcher, Tsinghua University, China   
+2025.11 - Now, Assistant Professor, Renmin University of China, Beijing, China
+
+2024.01 - 2025.11, Postdoctoral Researcher, Tsinghua University, Beijing, China   
 
 2023.07 - 2023.12,  Algorithm Engineer, Zhipu AI, Beijing, China    
 
-2017.09 - 2023.06, Ph.D. in Computer Science and Technology, Tsinghua University, China   
+2017.09 - 2023.06, Ph.D. in Computer Science and Technology, Tsinghua University, Beijing, China   
 
   - 2019.07 - 2020.11, Research Intern, Tencent, Beijing, China     
 
   - 2017.05 - 2017.09, Research Intern, Microsoft Research Asia, Beijing, China   
 
-2013.09 - 2017.06, B.E. in Computer Science and Technology, Nanjing University, China    
+2013.09 - 2017.06, B.E. in Computer Science and Technology, Nanjing University, Nanjing, China    
 
 
 
@@ -213,6 +217,7 @@ Xiaotao Gu, Hong Yang, Jie Tang, Jing Zhang, **Fanjin Zhang**, Debing Liu, Wendy
 **Reviewer**: IEEE Transactions on Knowledge and Data Engineering (*TKDE*), 
   IEEE Transactions on Neural Networks and Learning Systems (*TNNLS*),
   IEEE Transactions on Big Data (*TBD*), 
+  IEEE Transactions on Computational Social Systems (*TCSS*), 
   Social Network Analysis and Mining (*SNAM*),
   AI Open  
 
