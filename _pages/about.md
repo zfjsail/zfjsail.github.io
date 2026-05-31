@@ -19,6 +19,10 @@ For a complete and up-to-date publication list, see my Google Scholar profile <a
 
 I am looking for <u>highly-motivated</u> students to work with me on the area of AI for research. If interested, please drop me a message by email.  
 
+<span style="font-size: 125%; font-weight: 700; color:red">What's New</span>
+
+- Supercharge your research with [AMiner Open Skill](https://github.com/CanXiangCC/aminer-open-skill). Explore papers through deep search, detect fake or hallucinated citations, discover relevant publications with smart recommendations, and visualize knowledge with automatic paper mind maps, etc.
+
 
 
 ## Research 
@@ -34,7 +38,7 @@ I am looking for <u>highly-motivated</u> students to work with me on the area of
 **LLM Agent for Academic Data**
 
 
-Large Language Model (LLM) Agents are revolutionizing the development of academic applications, making them smarter and more accessible. Our current focus is on pioneering technologies and products in areas such as [**AI-driven Academic Search**](https://aminer.org), [**Intelligent Paper Reading**](https://www.aminer.cn/chat/s/explain), and [**AMiner Deep Research**](https://aminer.org/open/research). Our goal is to create powerful agents that excel in tasks like planning, searching, summarizing, and reflecting with high levels of efficiency and effectiveness.
+Large Language Model (LLM) Agents are revolutionizing the development of academic applications, making them smarter and more accessible. Our current focus is on pioneering technologies and products in areas such as [**AI-driven Academic Search**](https://aminer.org) ![](https://img.shields.io/badge/KDD-2026-blue), [**Intelligent Paper Reading**](https://www.aminer.cn/chat/s/explain) ![](https://img.shields.io/badge/ACL-2026-blue), and [**AMiner Deep Research**](https://aminer.org/open/research) ![](https://img.shields.io/badge/KDD-2026-blue). Our goal is to create powerful agents that excel in tasks like planning, searching, summarizing, and reflecting with high levels of efficiency and effectiveness.
 
 
 
@@ -55,7 +59,9 @@ Large Language Model (LLM) Agents are revolutionizing the development of academi
 - From-Scratch Name Disambiguation:
   - ![](https://img.shields.io/badge/WWW-2024-blue) BOND: an end-to-end method that bootstraps the global clustering and local metric learning. [[code]](https://github.com/THUDM/WhoIsWho)   
   - ![](https://img.shields.io/badge/KDD-2018-blue) A representation learning method that incorporates both global and local information between documents.  [[code]](https://github.com/neozhangthe1/disambiguation)    
-- INcorrect Assignment Detection: ![](https://img.shields.io/badge/KDD-2025-blue) GuARD: a multi-modal-like multi-turn instruction tuning framework. [[code & data & model]](https://github.com/THUDM/WhoIsWho/tree/main/mind)        
+- INcorrect Assignment Detection: 
+  - ![](https://img.shields.io/badge/KDD-2025-blue) GuARD: a multi-modal-like multi-turn instruction tuning framework. [[code & data & model]](https://github.com/THUDM/WhoIsWho/tree/main/mind)    
+  - ![](https://img.shields.io/badge/KDD-2026-blue)  CrossND: a cross-source reasoning-based correction framework for author name disambiguation [[code & data]](https://github.com/zfjsail/CrossND)
 
 
 </div>
@@ -104,12 +110,28 @@ on OAG, covering 10 tasks, 20 datasets, 70+baselines, and 120+experimental resul
 
 ## Publications
 
-(† corresponding authors)
+( <sup>*</sup> equal contribution; † corresponding authors)
 
 **RPC-Bench: A Fine-grained Benchmark for Research Paper Comprehension**  
-*arXiv:2601.14289*    
+*The 64th Annual Meeting of the Association for Computational Linguistics (**ACL**) 2026*          
 Yelin Chen, **Fanjin Zhang†**, Suping Sun, Yunhe Pang, Yuanchun Wang, Jian Song, Xiaoyan Li, Lei Hou, Shu Zhao, Jie Tang, Juanzi Li  
 [[pdf]](https://arxiv.org/pdf/2601.14289) [[code & data]](https://rpc-bench.github.io/)  
+
+**Cross-Source Reasoning-based Correction for Author Name Disambiguation**  
+*Proceedings of the 32nd ACM SIGKDD Conference on Knowledge Discovery and Data Mining (**KDD**) 2026*  
+**Fanjin Zhang**<sup>*</sup>, Yunhe Pang<sup>*</sup>, Bo Chen, Zhiyu Shen, Yanghui Rao, Evgeny Kharlamov, Jie Tang.   
+[[code & data]](https://github.com/zfjsail/CrossND)   
+
+**AISE-Bench: A Full-Cycle Curated Benchmark for Information Seeking on Academic Knowledge Graphs**  
+*Proceedings of the 32nd ACM SIGKDD Conference on Knowledge Discovery and Data Mining (**KDD**) 2026*    
+**Fanjin Zhang**<sup>*</sup>, Zhengyang Wang<sup>*</sup>, Ruixuan Huang, Kefan Zhang, Amy Xin, Yuanchun Wang, Shu Zhao, Evgeny Kharlamov, Jie Tang, Juanzi Li.  
+[[code & data]](https://aise-bench.github.io/)     
+
+**SurveyReview: A Reviewer-Aligned Benchmark for Survey Evaluators.**   
+*Proceedings of the 32nd ACM SIGKDD Conference on Knowledge Discovery and Data Mining (**KDD**) 2026*     
+Yuheng Zhang<sup>*</sup>, Yuanchun Wang<sup>*</sup>, **Fanjin Zhang**<sup>*</sup>, Ruyu Zhao, Juanzi Li, Jie Tang, Jing Zhang.     
+[[code & data]](https://surveyreview.github.io)      
+
 
 **Small Language Model Makes an Effective Long Text Extractor**     
 *The 39th Annual AAAI Conference on Artificial Intelligence (**AAAI**) 2025*      
@@ -209,6 +231,7 @@ Xiaotao Gu, Hong Yang, Jie Tang, Jing Zhang, **Fanjin Zhang**, Debing Liu, Wendy
 ## Service
 
 **PC Member**:   
+2026: KDD  
 2025: KDD   
 2024: WSDM, AAAI, WWW, KDD  
 2023: WSDM, AAAI   
@@ -219,9 +242,12 @@ Xiaotao Gu, Hong Yang, Jie Tang, Jing Zhang, **Fanjin Zhang**, Debing Liu, Wendy
   IEEE Transactions on Big Data (*TBD*), 
   IEEE Transactions on Computational Social Systems (*TCSS*), 
   Social Network Analysis and Mining (*SNAM*),
-  AI Open  
+  AI Open, 
+  Nature Scientific Reports
+
 
 ## Awards
+National Postdoctoral Fellowship Program (Category B) (2024)   
 Excellent Graduate Student from Department of Computer Science and Technology, Tsinghua University (2023)   
 Alumnus Scholarship of Tsinghua University (2021 & 2019)  
 Second Prize of the National Science and Technology Progress Award (2020)  
