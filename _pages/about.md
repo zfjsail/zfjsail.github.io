@@ -14,7 +14,7 @@ I am Fanjin Zhang (张帆进), an Assistant Professor in the [School of Informat
 
 My research interests generally include data mining, knowledge graph, and large language models, with an emphasis on developing **scalable** and **lightweight** data mining algorithms
 primarily on academic knowledge graph to accelerate academic research and scientific innovation.
-For a complete and up-to-date publication list, see my Google Scholar profile <a href='https://scholar.google.com/citations?user=V-e7-ooAAAAJ'><img id="google-scholar-citation-badge" src="https://img.shields.io/badge/citations-loading-lightgrey?style=flat&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&label=citations" alt="Google Scholar citations loading"></a>.
+For a complete and up-to-date publication list, see my Google Scholar profile <a href='https://scholar.google.com/citations?user=V-e7-ooAAAAJ'><img id="google-scholar-citation-badge" src="https://img.shields.io/badge/citations-loading-lightgrey?style=flat&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&label=citations" alt="Google Scholar citations loading" loading="lazy" decoding="async"></a>.
 
 
 I am looking for <u>highly-motivated</u> students to work with me on the area of AI for research. If interested, please drop me a message by email.  
@@ -28,7 +28,7 @@ I am looking for <u>highly-motivated</u> students to work with me on the area of
 ## Research 
 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">LLM Agent for Academic Data</div><img src='images/aminer-dr.png' alt="sym" width="100%">
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">LLM Agent for Academic Data</div><img src='images/aminer-dr-800.webp' alt="LLM Agent for Academic Data" width="400" height="229" loading="lazy" decoding="async">
 
 
 </div>
@@ -38,7 +38,7 @@ I am looking for <u>highly-motivated</u> students to work with me on the area of
 **LLM Agent for Academic Data**
 
 
-Large Language Model (LLM) Agents are revolutionizing the development of academic applications, making them smarter and more accessible. Our current focus is on pioneering technologies and products in areas such as [**AI-driven Academic Search**](https://aminer.org) ![](https://img.shields.io/badge/KDD-2026-blue), [**Intelligent Paper Reading**](https://www.aminer.cn/chat/s/explain) ![](https://img.shields.io/badge/ACL-2026-blue), and [**AMiner Deep Research**](https://aminer.org/open/research) ![](https://img.shields.io/badge/KDD-2026-blue). Our goal is to create powerful agents that excel in tasks like planning, searching, summarizing, and reflecting with high levels of efficiency and effectiveness.
+Large Language Model (LLM) Agents are revolutionizing the development of academic applications, making them smarter and more accessible. Our current focus is on pioneering technologies and products in areas such as [**AI-driven Academic Search**](https://aminer.org) <span class="venue-badge">KDD 2026</span>, [**Intelligent Paper Reading**](https://www.aminer.cn/chat/s/explain) <span class="venue-badge">ACL 2026</span>, and [**AMiner Deep Research**](https://aminer.org/open/research) <span class="venue-badge">KDD 2026</span>. Our goal is to create powerful agents that excel in tasks like planning, searching, summarizing, and reflecting with high levels of efficiency and effectiveness.
 
 
 
@@ -46,7 +46,7 @@ Large Language Model (LLM) Agents are revolutionizing the development of academi
 </div>
 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Author Name Disambiguation (AND)</div><img src='images/whoiswho.png' alt="sym" width="100%">
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Author Name Disambiguation (AND)</div><img src='images/whoiswho-800.webp' alt="Author Name Disambiguation" width="400" height="278" loading="lazy" decoding="async">
 
 
 </div>
@@ -55,20 +55,20 @@ Large Language Model (LLM) Agents are revolutionizing the development of academi
 
 **Name Disambiguation**, a core challenge in academic systems, is now facing greater challenges with the rapid growth of papers. We develop WhoIsWho, a million-scale human-annotated author name disambiguation benchmark, decompose the AND problem into several subtasks, and develop specialized algorithms for each subtask.
 
-- ![](https://img.shields.io/badge/KDD-2023-blue) WhoIsWho Benchmark:  [[code & data]](https://github.com/THUDM/WhoIsWho)      
+- <span class="venue-badge">KDD 2023</span> WhoIsWho Benchmark:  [[code & data]](https://github.com/THUDM/WhoIsWho)      
 - From-Scratch Name Disambiguation:
-  - ![](https://img.shields.io/badge/WWW-2024-blue) BOND: an end-to-end method that bootstraps the global clustering and local metric learning. [[code]](https://github.com/THUDM/WhoIsWho)   
-  - ![](https://img.shields.io/badge/KDD-2018-blue) A representation learning method that incorporates both global and local information between documents.  [[code]](https://github.com/neozhangthe1/disambiguation)    
+  - <span class="venue-badge">WWW 2024</span> BOND: an end-to-end method that bootstraps the global clustering and local metric learning. [[code]](https://github.com/THUDM/WhoIsWho)   
+  - <span class="venue-badge">KDD 2018</span> A representation learning method that incorporates both global and local information between documents.  [[code]](https://github.com/neozhangthe1/disambiguation)    
 - INcorrect Assignment Detection: 
-  - ![](https://img.shields.io/badge/KDD-2025-blue) GuARD: a multi-modal-like multi-turn instruction tuning framework. [[code & data & model]](https://github.com/THUDM/WhoIsWho/tree/main/mind)    
-  - ![](https://img.shields.io/badge/KDD-2026-blue)  CrossND: a cross-source reasoning-based correction framework for author name disambiguation [[code & data]](https://github.com/zfjsail/CrossND)
+  - <span class="venue-badge">KDD 2025</span> GuARD: a multi-modal-like multi-turn instruction tuning framework. [[code & data & model]](https://github.com/THUDM/WhoIsWho/tree/main/mind)    
+  - <span class="venue-badge">KDD 2026</span>  CrossND: a cross-source reasoning-based correction framework for author name disambiguation [[code & data]](https://github.com/zfjsail/CrossND)
 
 
 </div>
 </div>
 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Paper Source Tracing (PST)</div><img src='images/pst.png' alt="sym" width="100%">
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Paper Source Tracing (PST)</div><img src='images/pst.webp' alt="Paper Source Tracing" width="400" height="336" loading="lazy" decoding="async">
 
 
 </div>
@@ -85,7 +85,7 @@ are critical for researchers in knowledge discovery. However, a notable gap pers
 </div>
 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Open Academic Graph (OAG)</div><img src='images/oab-overview-en.png' alt="sym" width="100%">
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Open Academic Graph (OAG)</div><img src='images/oab-overview-en-800.webp' alt="Open Academic Graph" width="400" height="358" loading="lazy" decoding="async">
 
 
 </div>
@@ -98,8 +98,8 @@ The overarching goal of academic data mining is to deepen our comprehension of t
 We release a series of meticulously curated academic benchmarks to foster the develeopment of this field.  
 
 
-- ![](https://img.shields.io/badge/KDD-2019-blue)  ![](https://img.shields.io/badge/TKDE-2023-blue) OAG: A collection of billion-scale academic knowledge graphs. [[data]](https://www.aminer.cn/open/article?id=5965cf249ed5db41ed4f52bf)   
-- ![](https://img.shields.io/badge/KDD-2024-blue) OAG-Bench: a comprehensive, multi-aspect, and fine-grained human-curated benchmark built
+- <span class="venue-badge">KDD 2019</span>  <span class="venue-badge">TKDE 2023</span> OAG: A collection of billion-scale academic knowledge graphs. [[data]](https://www.aminer.cn/open/article?id=5965cf249ed5db41ed4f52bf)   
+- <span class="venue-badge">KDD 2024</span> OAG-Bench: a comprehensive, multi-aspect, and fine-grained human-curated benchmark built
 on OAG, covering 10 tasks, 20 datasets, 70+baselines, and 120+experimental results to date. [[code]](https://github.com/zfjsail/OAG-Bench/tree/main)  [[data]](https://www.aminer.cn/data/) [[data challenge]](https://www.biendata.xyz/kdd2024/)     
 </div>
 </div>
