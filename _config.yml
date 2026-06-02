@@ -15,6 +15,14 @@ google_scholar_stats_use_cdn : true
 # google analytics
 google_analytics_id      :  # get google_analytics_id from https://analytics.google.com/analytics/
 
+# page view counter
+# Create your own counter at https://www.hitwebcounter.com/ and paste the
+# generated "page" value here. Do not reuse another site's page id.
+hitwebcounter_page_id    : "21501549"
+hitwebcounter_style      : "0024"
+hitwebcounter_digits     : 6
+hitwebcounter_init_count : 0
+
 # SEO Related
 google_site_verification :  # get google_site_verification from https://search.google.com/search-console/about
 bing_site_verification   :  # get bing_site_verification from https://www.bing.com/webmasters/about

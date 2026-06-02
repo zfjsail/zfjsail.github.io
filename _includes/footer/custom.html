@@ -1,0 +1,10 @@
+{% if site.hitwebcounter_page_id %}
+<!-- hitwebcounter Code START -->
+<img
+  src="https://hitwebcounter.com/counter/counter.php?page={{ site.hitwebcounter_page_id }}&style={{ site.hitwebcounter_style | default: '0024' }}&nbdigits={{ site.hitwebcounter_digits | default: 5 }}&type=page&initCount={{ site.hitwebcounter_init_count | default: 0 }}"
+  title="Free Counter"
+  alt="web counter"
+  border="0"
+/>
+<!-- hitwebcounter Code END -->
+{% endif %}
