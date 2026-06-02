@@ -1,7 +1,6 @@
 name: Update Google Scholar Stats
 
 on:
-  page_build:
   schedule:
     - cron: "0 8 * * *"
   workflow_dispatch:
@@ -15,7 +14,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          ref: google-scholar-stats
+          ref: master
           fetch-depth: 0
 
       - name: Set up Python
@@ -35,18 +34,23 @@ jobs:
         run: |
           cp results/gs_data.json gs_data.json
           cp results/gs_data_shieldsio.json gs_data_shieldsio.json
-          mkdir -p _site
+          mkdir -p google-scholar-stats _site _site/google-scholar-stats
+          cp results/gs_data.json google-scholar-stats/gs_data.json
+          cp results/gs_data_shieldsio.json google-scholar-stats/gs_data_shieldsio.json
+          cp results/gs_data.json _site/gs_data.json
           cp results/gs_data_shieldsio.json _site/gs_data_shieldsio.json
+          cp results/gs_data.json _site/google-scholar-stats/gs_data.json
+          cp results/gs_data_shieldsio.json _site/google-scholar-stats/gs_data_shieldsio.json
 
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add gs_data.json gs_data_shieldsio.json _site/gs_data_shieldsio.json
+          git add gs_data.json gs_data_shieldsio.json google-scholar-stats/gs_data.json google-scholar-stats/gs_data_shieldsio.json _site/gs_data.json _site/gs_data_shieldsio.json _site/google-scholar-stats/gs_data.json _site/google-scholar-stats/gs_data_shieldsio.json
           if git diff --cached --quiet; then
             echo "No changes to commit."
             exit 0
           fi
           git commit -m "Update Google Scholar citation stats"
-          git pull --rebase origin google-scholar-stats
-          git push origin google-scholar-stats
+          git pull --rebase origin master
+          git push origin master
