@@ -442,23 +442,26 @@ National Scholarship (2014)</p>
 <script>
     function initGoogleScholarStats() {
         var gsRepository = 'zfjsail/zfjsail.github.io';
-        var gsDataPaths = [
+        var localGsDataPaths = [
             '/gs_data.json',
             '/gs_data_shieldsio.json',
             '/google-scholar-stats/gs_data.json',
-            '/google-scholar-stats/gs_data_shieldsio.json',
-            'https://cdn.jsdelivr.net/gh/' + gsRepository + '@google-scholar-stats/gs_data.json',
-            'https://cdn.jsdelivr.net/gh/' + gsRepository + '@google-scholar-stats/gs_data_shieldsio.json',
-            'https://cdn.jsdelivr.net/gh/' + gsRepository + '@google-scholar-stats/results/gs_data.json',
-            'https://cdn.jsdelivr.net/gh/' + gsRepository + '@google-scholar-stats/results/gs_data_shieldsio.json',
+            '/google-scholar-stats/gs_data_shieldsio.json'
+        ];
+        var latestGsDataPaths = [
             'https://raw.githubusercontent.com/' + gsRepository + '/google-scholar-stats/gs_data.json',
             'https://raw.githubusercontent.com/' + gsRepository + '/google-scholar-stats/gs_data_shieldsio.json',
             'https://raw.githubusercontent.com/' + gsRepository + '/google-scholar-stats/results/gs_data.json',
             'https://raw.githubusercontent.com/' + gsRepository + '/google-scholar-stats/results/gs_data_shieldsio.json',
+            'https://cdn.jsdelivr.net/gh/' + gsRepository + '@google-scholar-stats/gs_data.json',
+            'https://cdn.jsdelivr.net/gh/' + gsRepository + '@google-scholar-stats/gs_data_shieldsio.json',
+            'https://cdn.jsdelivr.net/gh/' + gsRepository + '@google-scholar-stats/results/gs_data.json',
+            'https://cdn.jsdelivr.net/gh/' + gsRepository + '@google-scholar-stats/results/gs_data_shieldsio.json',
             'https://cdn.jsdelivr.net/gh/' + gsRepository + '@main/google-scholar-stats/gs_data.json',
             'https://raw.githubusercontent.com/' + gsRepository + '/main/google-scholar-stats/gs_data.json',
             'https://raw.githubusercontent.com/' + gsRepository + '/main/gs_data.json'
         ];
+        var gsDataPaths = localGsDataPaths.concat(latestGsDataPaths);
         var cacheKey = 'google-scholar-stats-cache-v1';
         var cacheTtlMs = 24 * 60 * 60 * 1000;
 
@@ -524,6 +527,41 @@ National Scholarship (2014)</p>
         function isApproxCitation(data) {
             var raw = getRawCitation(data);
             return typeof raw === 'string' && raw.indexOf('+') >= 0;
+        }
+
+        function citationNumber(data) {
+            if (!hasUsableCitation(data)) {
+                return null;
+            }
+            var n = parseInt(normalizeCitationValue(getRawCitation(data)), 10);
+            return isNaN(n) ? null : n;
+        }
+
+        function updatedTime(data) {
+            if (!data || !data['updated']) {
+                return null;
+            }
+            var parsed = Date.parse(String(data['updated']).replace(' ', 'T'));
+            return isNaN(parsed) ? null : parsed;
+        }
+
+        function isFresherData(candidate, current) {
+            if (!hasUsableCitation(candidate)) {
+                return false;
+            }
+            if (!current || !hasUsableCitation(current)) {
+                return true;
+            }
+
+            var candidateUpdated = updatedTime(candidate);
+            var currentUpdated = updatedTime(current);
+            if (candidateUpdated !== null && currentUpdated !== null && candidateUpdated > currentUpdated) {
+                return true;
+            }
+
+            var candidateCitation = citationNumber(candidate);
+            var currentCitation = citationNumber(current);
+            return candidateCitation !== null && currentCitation !== null && candidateCitation > currentCitation;
         }
 
         function extractProfileCitations() {
@@ -673,12 +711,29 @@ National Scholarship (2014)</p>
             });
         }
 
-        function fetchScholarStats(index, allowApprox) {
-            if (index >= gsDataPaths.length) {
+        function fetchScholarStatsFrom(paths, index, allowApprox) {
+            if (index >= paths.length) {
                 return Promise.reject(new Error('All data sources failed'));
             }
-            return fetchFromUrl(gsDataPaths[index], allowApprox).catch(function () {
-                return fetchScholarStats(index + 1, allowApprox);
+            return fetchFromUrl(paths[index], allowApprox).catch(function () {
+                return fetchScholarStatsFrom(paths, index + 1, allowApprox);
+            });
+        }
+
+        function fetchScholarStats(index, allowApprox) {
+            return fetchScholarStatsFrom(gsDataPaths, index, allowApprox);
+        }
+
+        function refreshFromLatestSource(currentData) {
+            fetchScholarStatsFrom(latestGsDataPaths, 0, false).catch(function () {
+                return fetchScholarStatsFrom(latestGsDataPaths, 0, true);
+            }).then(function (data) {
+                if (isFresherData(data, currentData)) {
+                    setCitationData(data, false);
+                    saveCache(data);
+                }
+            }).catch(function () {
+                // Keep the fast local source if the live branch is unavailable.
             });
         }
 
@@ -696,6 +751,7 @@ National Scholarship (2014)</p>
         }).then(function (data) {
             setCitationData(data, false);
             saveCache(data);
+            refreshFromLatestSource(data);
             if (isApproxCitation(data)) {
                 extractProfileCitations().then(function (actualCount) {
                     data['citedby'] = actualCount;
