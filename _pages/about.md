@@ -19,6 +19,8 @@ For a complete and up-to-date publication list, see my Google Scholar profile <a
 
 I am looking for <u>highly-motivated</u> students to work with me on the area of AI for research. If interested, please drop me a message by email.  
 
+<div class="notice--warning" style="margin: 0.75em 0 !important; padding: 0.55em 0.8em;"><strong>招生信息：</strong>招收2027年入学的<strong>专业硕士</strong>，欢迎感兴趣的同学邮件联系。</div>
+
 <span style="font-size: 125%; font-weight: 700; color:red">What's New</span>
 
 - Supercharge your research with [AMiner Open Skill](https://github.com/CanXiangCC/aminer-open-skill). Explore papers through deep search, detect fake or hallucinated citations, discover relevant publications with smart recommendations, and visualize knowledge with automatic paper mind maps, etc.
