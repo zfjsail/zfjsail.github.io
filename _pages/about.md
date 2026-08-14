@@ -119,20 +119,25 @@ on OAG, covering 10 tasks, 20 datasets, 70+baselines, and 120+experimental resul
 Yelin Chen, **Fanjin Zhang†**, Suping Sun, Yunhe Pang, Yuanchun Wang, Jian Song, Xiaoyan Li, Lei Hou, Shu Zhao, Jie Tang, Juanzi Li  
 [[pdf]](https://arxiv.org/pdf/2601.14289) [[code & data]](https://rpc-bench.github.io/)  
 
+**EurekAgent: Agent Environment Engineering is All You Need For Autonomous Scientific Discovery**  
+*arXiv:2606.13662*  
+Amy Xin, Jiening Siow, Junjie Wang, Zijun Yao, **Fanjin Zhang**, Jian Song, Lei Hou, Juanzi Li  
+[[pdf]](https://arxiv.org/pdf/2606.13662) [[code]](https://github.com/THU-Team-Eureka/EurekAgent)
+
 **Cross-Source Reasoning-based Correction for Author Name Disambiguation**  
 *Proceedings of the 32nd ACM SIGKDD Conference on Knowledge Discovery and Data Mining (**KDD**) 2026*  
 **Fanjin Zhang**<sup>*</sup>, Yunhe Pang<sup>*</sup>, Bo Chen, Zhiyu Shen, Yanghui Rao, Evgeny Kharlamov, Jie Tang.   
-[[code & data]](https://github.com/zfjsail/CrossND)   
+[[pdf]](https://arxiv.org/pdf/2606.08617) [[code & data]](https://github.com/zfjsail/CrossND)
 
 **AISE-Bench: A Full-Cycle Curated Benchmark for Information Seeking on Academic Knowledge Graphs**  
 *Proceedings of the 32nd ACM SIGKDD Conference on Knowledge Discovery and Data Mining (**KDD**) 2026*    
 **Fanjin Zhang**<sup>*</sup>, Zhengyang Wang<sup>*</sup>, Ruixuan Huang, Kefan Zhang, Amy Xin, Yuanchun Wang, Shu Zhao, Evgeny Kharlamov, Jie Tang, Juanzi Li.  
-[[code & data]](https://aise-bench.github.io/)     
+[[pdf]](https://arxiv.org/pdf/2607.20498) [[code & data]](https://aise-bench.github.io/)
 
 **SurveyReview: A Reviewer-Aligned Benchmark for Survey Evaluators.**   
 *Proceedings of the 32nd ACM SIGKDD Conference on Knowledge Discovery and Data Mining (**KDD**) 2026*     
 Yuheng Zhang<sup>*</sup>, Yuanchun Wang<sup>*</sup>, **Fanjin Zhang**<sup>*</sup>, Ruyu Zhao, Juanzi Li, Jie Tang, Jing Zhang.     
-[[code & data]](https://surveyreview.github.io)      
+[[pdf]](https://arxiv.org/abs/2608.07641) [[code & data]](https://surveyreview.github.io)      
 
 
 **Small Language Model Makes an Effective Long Text Extractor**     
